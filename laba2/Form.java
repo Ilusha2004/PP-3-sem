@@ -4,42 +4,56 @@ import java.util.Formatter;
 
 class Form{
 
-    Formatter form = new Formatter();
+    Formatter form;
 
     public String Skobki(BigDecimal x){
+        form = new Formatter();
         return form.format("%(f", x.doubleValue()).toString();
     }
 
     public String Zapyataya(BigDecimal x){
+        form = new Formatter();
         return form.format("%,.2f", x.doubleValue()).toString();
     }
 
     public String Reshetka(BigDecimal x){
+        form = new Formatter();
         return form.format("%#f", x.doubleValue()).toString() + "$\n" + form.format("%#e", x.doubleValue()).toString();
     }
 
     public String HEX(BigDecimal x){
+        form = new Formatter();
         return form.format("%a", x.doubleValue()).toString();
     }
 
     public String OCTA(BigDecimal x){
+        form = new Formatter();
         return form.format("%o", x.doubleValue()).toString();
     }
 
     public String Float(BigDecimal x){
+        form = new Formatter();
         return form.format("Float formatting - %f", x.doubleValue()).toString();
     }
 
     public String PositiveAndNegative(BigDecimal x){
-        return form.format("%1$+f", x.doubleValue()).toString();
+        form = new Formatter();
+        return form.format("%1$+f and %2$+f", x.doubleValue(), -x.doubleValue()).toString();
     }
 
     public String SetPrecition(BigDecimal x, int k){
+        form = new Formatter();
         return form.format("%." + k + "f", x.doubleValue()).toString();
     }
 
     public String PorArgument(BigDecimal x){
-        return form.format("", x.toBigInteger(), x.subtract(new BigDecimal(x.toBigInteger()))).toString();
+        form = new Formatter();
+        return form.format("%1$f + %2$f", x.toBigInteger(), x.subtract(new BigDecimal(x.toBigInteger()))).toString();
+    }
+
+    public String MinWidht(BigDecimal x){
+        form = new Formatter();
+        return form.format("%020f", x.doubleValue()).toString();
     }
 
     public String EightDigits(BigDecimal x, int k){
@@ -92,10 +106,5 @@ class Form{
         }
 
         return str;
-    }
-
-
-    public void MinWidht(BigDecimal x){
-
     }
 }
