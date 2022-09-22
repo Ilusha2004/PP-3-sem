@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.Formatter;
 
 class Form{
@@ -16,9 +17,13 @@ class Form{
         return form.format("%,.2f", x.doubleValue()).toString();
     }
 
-    public String Reshetka(BigDecimal x){
+    public String Reshetka(BigDecimal x, int k){
         form = new Formatter();
-        return form.format("%#f", x.doubleValue()).toString() + "$\n" + form.format("%#e", x.doubleValue()).toString();
+        Formatter formatter = new Formatter();
+        Formatter hexformatter = new Formatter();
+        Formatter form_1 = new Formatter();
+        return form.format("%#f", x.doubleValue()).toString() + "\n" + formatter.format("%#e", x.doubleValue()).toString()
+         + "\n" + hexformatter.format("%#a", x.setScale(k, RoundingMode.HALF_DOWN).doubleValue()).toString();
     }
 
     public String HEX(BigDecimal x){
@@ -26,9 +31,10 @@ class Form{
         return form.format("%a", x.doubleValue()).toString();
     }
 
-    public String OCTA(BigDecimal x){
+    public String OCTA(BigDecimal x, int k){
         form = new Formatter();
-        return form.format("%o", x.doubleValue()).toString();
+        Formatter form_1 = new Formatter();
+        return form.format("%o", (int)x.doubleValue()).toString() + "." + form_1.format("%o", (int)(x.subtract(new BigDecimal(x.toBigInteger())).doubleValue() * Math.pow(10, k - 1))).toString();
     }
 
     public String Float(BigDecimal x){
@@ -48,7 +54,7 @@ class Form{
 
     public String PorArgument(BigDecimal x){
         form = new Formatter();
-        return form.format("%1$f + %2$f", x.toBigInteger(), x.subtract(new BigDecimal(x.toBigInteger()))).toString();
+        return form.format("%1$f + %2$f", x.toBigInteger().doubleValue(), x.subtract(new BigDecimal(x.toBigInteger())).doubleValue()).toString();
     }
 
     public String MinWidht(BigDecimal x){
