@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Main {
@@ -18,25 +20,22 @@ public class Main {
         }
 
         Row obj = new Row(x, k);
-        //System.out.println(BigDecimal.valueOf(obj.TaylorN10()).setScale(k, RoundingMode.HALF_DOWN));
+        System.out.println("Double value: " + BigDecimal.valueOf(obj.TaylorN10()).setScale(k, RoundingMode.HALF_DOWN));
 
         Big oBig = new Big(x, k);
-        System.out.println(oBig.TaylorN1(x, k));
-        
-        // System.out.println(formatter.EightDigits(oBig.TaylorN1(x, k), k));
-        // System.out.println(formatter.Float(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.HEX(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.MinWidht(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.OCTA(oBig.TaylorN1(x, k), k));
-        // System.out.println(formatter.EightDigits(oBig.TaylorN1(x, k), k));
+        System.out.println("BigDecimal value: " + oBig.TaylorN1(x, k));
+        System.out.println(formatter.OCTA(oBig.TaylorN1(x, k), k));
+        System.out.println(formatter.HEX(oBig.TaylorN1(x, k)));
+        System.out.println(formatter.Float(oBig.TaylorN1(x, k)));
+        System.out.println(formatter.MinWidht(oBig.TaylorN1(x, k)));
         System.out.println(formatter.PorArgument(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.PositiveAndNegative(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.Reshetka(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.SetPrecition(oBig.TaylorN1(x, k), k));
-        // System.out.println(formatter.SixteenDigits(oBig.TaylorN1(x, k), k));
-        // System.out.println(formatter.Skobki(oBig.TaylorN1(x, k)));
-        // System.out.println(formatter.Zapyataya(oBig.TaylorN1(x, k)));
-
+        System.out.println(formatter.PositiveAndNegative(oBig.TaylorN1(x, k)));
+        System.out.println(formatter.Reshetka(oBig.TaylorN1(x, k), k));
+        System.out.println(formatter.SetPrecition(oBig.TaylorN1(x, k), k));
+        System.out.println(formatter.Skobki(oBig.TaylorN1(x, k)));
+        System.out.println(formatter.Zapyataya(oBig.TaylorN1(x, k)));
+        System.out.println("Another OCTA formatting: " + formatter.EightDigits(oBig.TaylorN1(x, k), k));
+        System.out.println("Another HEX formatting: " + formatter.SixteenDigits(oBig.TaylorN1(x, k), k));
         scanner.close();
     }
 }

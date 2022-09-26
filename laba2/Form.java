@@ -9,12 +9,12 @@ class Form{
 
     public String Skobki(BigDecimal x){
         form = new Formatter();
-        return form.format("%(f", x.doubleValue()).toString();
+        return "Negative formatting: " + form.format("%(f", x.doubleValue()).toString();
     }
 
     public String Zapyataya(BigDecimal x){
         form = new Formatter();
-        return form.format("%,.2f", x.doubleValue()).toString();
+        return "Point formatting: " + form.format("%,.2f", x.doubleValue()).toString();
     }
 
     public String Reshetka(BigDecimal x, int k){
@@ -22,44 +22,44 @@ class Form{
         Formatter formatter = new Formatter();
         Formatter hexformatter = new Formatter();
         Formatter form_1 = new Formatter();
-        return form.format("%#f", x.doubleValue()).toString() + "\n" + formatter.format("%#e", x.doubleValue()).toString()
-         + "\n" + hexformatter.format("%#a", x.setScale(k, RoundingMode.HALF_DOWN).doubleValue()).toString();
+        return "Using #: (" + form.format("%#f", x.doubleValue()).toString() + "\n" + formatter.format("%#e", x.doubleValue()).toString()
+         + "\n" + hexformatter.format("%#a", x.setScale(k, RoundingMode.HALF_DOWN).doubleValue()).toString() + ")";
     }
 
     public String HEX(BigDecimal x){
         form = new Formatter();
-        return form.format("%a", x.doubleValue()).toString();
+        return "HEX formatting: " + form.format("%a", x.doubleValue()).toString();
     }
 
     public String OCTA(BigDecimal x, int k){
         form = new Formatter();
         Formatter form_1 = new Formatter();
-        return form.format("%o", (int)x.doubleValue()).toString() + "." + form_1.format("%o", (int)(x.subtract(new BigDecimal(x.toBigInteger())).doubleValue() * Math.pow(10, k - 1))).toString();
+        return "OCTA formatting: " + form.format("%o", (int)x.doubleValue()).toString() + "." + form_1.format("%o", (int)(x.subtract(new BigDecimal(x.toBigInteger())).doubleValue() * Math.pow(10, k - 1))).toString();
     }
 
     public String Float(BigDecimal x){
         form = new Formatter();
-        return form.format("Float formatting - %f", x.doubleValue()).toString();
+        return form.format("Float formatting: %f", x.doubleValue()).toString();
     }
 
     public String PositiveAndNegative(BigDecimal x){
         form = new Formatter();
-        return form.format("%1$+f and %2$+f", x.doubleValue(), -x.doubleValue()).toString();
+        return "+ and - formatting: " + form.format("%1$+f and %2$+f", x.doubleValue(), -x.doubleValue()).toString();
     }
 
     public String SetPrecition(BigDecimal x, int k){
         form = new Formatter();
-        return form.format("%." + k + "f", x.doubleValue()).toString();
+        return "Precition formatting: " + form.format("%." + k + "f", x.doubleValue()).toString();
     }
 
     public String PorArgument(BigDecimal x){
         form = new Formatter();
-        return form.format("%1$f + %2$f", x.toBigInteger().doubleValue(), x.subtract(new BigDecimal(x.toBigInteger())).doubleValue()).toString();
+        return "Position number argument formatting: " + form.format("First argument: %1$f and second: %2$f", x.toBigInteger().doubleValue(), x.subtract(new BigDecimal(x.toBigInteger())).doubleValue()).toString();
     }
 
     public String MinWidht(BigDecimal x){
         form = new Formatter();
-        return form.format("%020f", x.doubleValue()).toString();
+        return "Widht formatting: " + form.format("%020f", x.doubleValue()).toString();
     }
 
     public String EightDigits(BigDecimal x, int k){
