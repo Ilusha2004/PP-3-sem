@@ -1,110 +1,155 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Formatter;
-
+import java.text.NumberFormat;
 public class Matrix {
+
     private int N;
-    private int[][] Array2D;
+    private Integer[][] array2DInteger;
+    private Integer[][] aIntegers2D;
+    private Integer max = Integer.MIN_VALUE;
+    private int MaxStroke = 0;
+    private int MaxS = 0;
+    private int krat = 1;
 
     Formatter form = new Formatter();
 
-    public Matrix(int N){
+    public Matrix(int N, int krat){
         this.N = N;
-        
-        Array2D = new int[N][N];
+        this.krat = krat;
+        array2DInteger = new Integer[N][N];
 
-        for(int i = 0; i < Array2D.length; i++){
-            for(int k = 0; k < Array2D.length; k++){
-                Array2D[i][k] = (int)(Math.random() * 1000); 
+        for(int i = 0; i < array2DInteger.length; i++){
+            for(int k = 0; k < array2DInteger.length; k++){
+                array2DInteger[i][k] = (int)(Math.random() * Math.pow(10, krat) * -1); 
             }
         }
     }
 
     public void PrintMatrix(){
-       
-        for(int i = 0; i < Array2D.length; i++){
+        for(int i = 0; i < array2DInteger.length; i++){
             form = new Formatter();
-            for(int p: Array2D[i]){
-                form.format("% 5d", p);
+            for(Integer p: array2DInteger[i]){
+                form.format("% " + (krat + 1) + "d", p);
             }
             System.out.println(form.format(""));
             form.close();
         }
     }
 
-    public int FindMaximalElementInMatrixAndDelete(){
-        int max = Integer.MIN_VALUE;
-        int MaxStroke = 0;
-        int MaxS = 0;
-        int[][] arr = new int[N - 1][N - 1];
+    public void ShowDeletingStrokeAndStolb(){
+        System.out.println("Deleting: ");
+        for(int i = 0; i < array2DInteger.length; i++){
+            form = new Formatter();
+            for(int k = 0; k < array2DInteger.length; k++){
+                if(k == MaxS || i == MaxStroke){
+                    form.format("% " + (krat + 1) + "d", 0);
+                }
+                else{
+                    form.format("% " + (krat + 1) + "d", array2DInteger[i][k]);
+                }
+            }
+            System.out.println(form.format(""));
+            form.close();
+        }
+        System.out.println();
+    }
+
+    public void ShowNewMatrix(){
+        System.out.println("New Matrix: ");
+        NumberFormat fNumberFormat = NumberFormat.getInstance();
+        NumberFormat fNumberFormat2 = NumberFormat.getCompactNumberInstance();
+        NumberFormat fNumberFormat3 = NumberFormat.getCurrencyInstance();
+
+        for(int i = 0; i < aIntegers2D.length; i++){
+            form = new Formatter();
+            for(Integer p: aIntegers2D[i]){
+                form.format("% " + (krat + 1) + "d", p);
+            }
+            System.out.println(form.format(""));
+            form.close();
+        }
+        System.out.println();
+        for(int i = 0; i < aIntegers2D.length; i++){
+            for(Integer p: aIntegers2D[i]){
+                System.out.print(fNumberFormat.format(p) + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i = 0; i < aIntegers2D.length; i++){
+            for(Integer p: aIntegers2D[i]){
+                System.out.print(fNumberFormat2.format(p) + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i = 0; i < aIntegers2D.length; i++){
+            for(Integer p: aIntegers2D[i]){
+                System.out.print(fNumberFormat3.format(p) + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        
+    }
+
+    public void FindMaximalElementInMatrixAndDelete(){
+        Integer[][] ar = new Integer[array2DInteger.length - 1][array2DInteger.length - 1];
         int ik = 0, ki = 0;
 
-        for(int i = 0; i < N; i++){
-            for(int k = 0; k < N; k++){
-                if(Math.abs(Array2D[i][k]) > Math.abs(max)){
-                    max = Array2D[i][k];
+        for(int i = 0; i < array2DInteger.length; i++){
+            for(int k = 0; k < array2DInteger.length; k++){
+                if(Math.abs(array2DInteger[i][k]) > Math.abs(max)){
+                    max = array2DInteger[i][k];
                     MaxStroke = i;
                     MaxS = k;
                 }
             }
         }
 
-        for(int i = 0; i < N; i++){
-            Array2D[MaxStroke][i] = Integer.MAX_VALUE;
-            Array2D[i][MaxS] = Integer.MAX_VALUE;
-        }
-
-        for(int i = 0; i < N; i++){
-            if(i == MaxStroke){
-                System.out.println(ik);
+        for(int i = 0; i < array2DInteger.length; i++){
+            if(i == MaxStroke){ 
                 continue;
             }
-            for(int k = 0; k < N; k++){
+            for(int k = 0; k < array2DInteger.length; k++){
                 if(k == MaxS){
-                    System.out.println(ki);
                     continue;
                 }
-                arr[ik][ki] = Array2D[i][k];
+                ar[ik][ki] = array2DInteger[i][k];
                 ki++;
-                System.out.println(ki);
             }
-            
             ik++;
             ki = 0;
-            System.out.println(ik);
         }
-
-        for(int i = 0; i < Array2D.length; i++){
-            for(int k = 0; k < Array2D.length; k++){
-                System.out.print(Array2D[i][k] + " ");
+        
+        Arrays.sort(ar[array2DInteger.length - 2], new Comparator<Integer>() {
+            public int compare(Integer object1, Integer object2){
+                Integer a = object1;
+                Integer b = object2;
+                return a < b ? 1 : a == b ? 0 : -1;
             }
-            System.out.println();
-        }
+        });
 
-        Array2D = arr;
-
-        return 0;
+        aIntegers2D = new Integer[N - 1][N - 1];
+        aIntegers2D = ar;
     }
 
-    int BinarySearchStroke(int i, int a){
-        int[] arr = Array2D[i];
-        Arrays.sort(arr); 
-        int l = 0; int r = Array2D.length;
-        System.out.println(a);
-        while (l > r){
-            int k = (l + r) / 2;
-            System.out.println("1. " + arr[k] + " " + a + " " + k);
-            if(arr[k] == a){
-                return k;
-            }
-            else if(arr[k] <= a){
-                l = k + 1; 
-            }
-            else if(arr[k] > a){
-                System.out.println(arr[k] + " " + a);
-                r = k;
-            }
-        }
-        return -1;
-
+    Integer GetMax(){
+        return max;
     }
+
+    int GetMaxStroke(){
+        return MaxStroke;
+    }
+
+    int GetLenght(){
+        return aIntegers2D.length;
+    }
+
+    Integer[] gIntegers(){
+        Arrays.sort(aIntegers2D[aIntegers2D.length - 1]);
+        return aIntegers2D[aIntegers2D.length - 1];
+    }
+
 }
