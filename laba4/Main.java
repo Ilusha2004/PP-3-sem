@@ -12,8 +12,8 @@ qwertyuiopasdfghjklzxcvbnm23456789
 */
 /*
 bab1001a102a3452a10000000000000001a10000000000001000a10001000100
-a
-001000010001
+ab
+10001000100
 */
 
 public class Main{
@@ -137,7 +137,7 @@ public class Main{
         arraylist_1.get(i).getChars(0, arraylist_1.get(i).length(), str_2, 0);
 
         if(arraylist_1.get(i).compareTo(P) == 0){
-            System.out.println(String.format("Found index first occurrence of string: %d", str_0.indexOf(P))); //поиск первого вхождения строки
+            System.out.print(String.format("\nFound index first occurrence of string: %d", str_0.indexOf(P))); //поиск первого вхождения строки
         }
 
         for(int k = 0; k < arraylist_1.get(i).length(); k++){
