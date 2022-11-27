@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jk xmlns="govno">
+    <Language id="1">
+        <name>java</name>
+        <age>4</age>
+    </Language>
+</jk>
