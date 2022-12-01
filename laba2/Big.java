@@ -9,6 +9,7 @@ class Big {
     public BigInteger k;
 
     Big(double x, int k){
+        
         this.x = BigDecimal.valueOf(x);
         this.k = BigInteger.valueOf(k);
         this.eps = BigDecimal.valueOf(Math.pow(10.0, -(k)));
