@@ -3,6 +3,8 @@ package com.laba_6a.XMLParser;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,22 +25,16 @@ import org.w3c.dom.Node;
 
 public class XMLParser {
 
-    private static ArrayList<Car> cars = new ArrayList<>();
+    private static ArrayList<Car> cars = new ArrayList<Car>();
+    private static Hashtable<Car, String> Cars = new Hashtable<Car, String>();
 
     public void Parse(String filePath) throws ParserConfigurationException, SAXException, IOException{
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         HEXParse par = new HEXParse();
-
         parser.parse(new File(filePath), par);
         
-    }
-
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        XMLParser Main = new XMLParser();
-        Main.Parse("resourses/car.xml");
-        Main.WriteXMLFile("resourses/car.xml");
     }
 
     private static class HEXParse extends DefaultHandler {
@@ -47,11 +43,13 @@ public class XMLParser {
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             if(qName.equals("car")){
                 String brand = attributes.getValue("brand");
-                String color = attributes.getValue("color");
                 String pos = attributes.getValue("position");
                 String vel = attributes.getValue("velocity");
 
-                cars.add(new Car(brand, color, Double.parseDouble(pos), Double.parseDouble(vel)));
+                cars.add(new Car(Double.valueOf(pos),
+                                 Double.valueOf(vel),
+                                 brand,
+                       null));
             }
         }
 
@@ -60,15 +58,29 @@ public class XMLParser {
     public void WriteXMLFile(String filePath) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
+    
 
         try{
             builder = factory.newDocumentBuilder();
             Document document = builder.newDocument();
 
-            Element element = document.createElementNS("govno", "jk");
+            Element element = document.createElementNS("Nürburgring", "Track");
 
             document.appendChild(element);
-            element.appendChild(getLanguage(document, "1", "java", "4"));
+            
+            try {
+
+                for(var id : cars) {
+                    element.appendChild(getCar(document,
+                                        id.getBrand().toString(),
+                                        id.getRaInteger().toString(),
+                                        Cars.get(id)));
+                                 
+                }
+
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transform = transformerFactory.newTransformer(); 
@@ -87,25 +99,33 @@ public class XMLParser {
 
     }
 
-    private static Node getLanguage(Document doc, String id, String name, String age) {
-        Element language = doc.createElement("Language");
+    private static Node getCar(Document doc, String brandCar, String timePass, String PassingCar) {
+        Element sportCar = doc.createElement("SportCar");
  
-        language.setAttribute("id", id);
+        sportCar.setAttribute("BrandCar", brandCar);
  
-        language.appendChild(getLanguageElements(doc, language, "name", name));
- 
-        language.appendChild(getLanguageElements(doc, language, "age", age)); 
-        return language;
+        sportCar.appendChild(getCarElements(doc, sportCar, "TimePass", timePass));
+        sportCar.appendChild(getCarElements(doc, sportCar, "PassingCar", PassingCar)); 
+        
+        return sportCar;
     }
  
-    private static Node getLanguageElements(Document doc, Element element, String name, String value) {
-        Element node = doc.createElement(name);
+    private static Node getCarElements(Document doc, Element element, String timePass, String value) {
+        Element node = doc.createElement(timePass);
         node.appendChild(doc.createTextNode(value));
         return node;
     }
 
     public static ArrayList<Car> getCars() {
         return cars;
+    }
+
+    public static void setCars(ArrayList<Car> caar) {
+        XMLParser.cars = new ArrayList<>(caar);
+    }
+
+    public static void setcars(Hashtable<Car, String> caar) {
+        Cars = caar;
     }
     
 }

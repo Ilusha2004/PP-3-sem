@@ -1,95 +1,113 @@
 package com.laba_6a.car;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.List;
-import java.util.Scanner;
-import com.laba_6a.pair.Pair;
+import com.laba_6a.JsonParser.ParserJson;
+import com.laba_6a.XMLParser.XMLParser;
 
-public class Track {
-    private Hashtable<Pair<String, String>, Pair<Integer, Integer>> Cars = new Hashtable<Pair<String, String>, Pair<Integer, Integer>>();
+public class Track extends Car{
 
-    public Track(Hashtable<Pair<String, String>, Pair<Integer, Integer>> cHashtable) {
-        Cars = cHashtable;
+    private static Hashtable<Car, String> Cars = new Hashtable<Car, String>();
+    private ArrayList<Car> cars = new ArrayList<Car>();
+
+    public Track(ArrayList<Car> cars) {
+        this.cars = cars;
     }
 
-    public Hashtable<Pair<String, String>, Pair<Integer, Integer>> getCars() {
+    public Hashtable<Car, String> getCars() {
         return Cars;
-    }
-
-    public void setCars(Hashtable<Pair<String, String>, Pair<Integer, Integer>> cars) {
-        Cars = cars;
     }
 
     @Override
     public String toString() {
-        Enumeration<Pair<String, String>> nEnumeration = Cars.keys();
+        Enumeration<Car> nEnumeration = Cars.keys();
         StringBuffer buffer = new StringBuffer(); 
         buffer.append("Cars: [ ");
+
         while(nEnumeration.hasMoreElements()){
-            Pair<String, String> key = nEnumeration.nextElement();
-            buffer.append("{ Position: " + key.toString() + " Velocity: " + Cars.get(key) + " }, ");
+            Car key = nEnumeration.nextElement();
+            buffer.append("{ Position: " + key.getPosition() +
+                           " Velocity: " + key.getVelocity() +
+                           " Brand: " + key.getBrand() +
+            " }");
+
+            buffer.append(key.getPosition());
         }
+
         buffer.append("]");
 
         return buffer.toString();
+
     }
 
-    public void CountRapid(Double time) {
-        Enumeration<Pair<String, String>> nEnumeration = Cars.keys();
-        List<Car> cars = new ArrayList<>();
-        while (nEnumeration.hasMoreElements()) {   
-            Pair<String, String> key = nEnumeration.nextElement();
-            System.out.println(key.getFirstItem().getClass());
-            System.out.println(key.getSecondItem().getClass());
-            System.out.println(Cars.get(key).getFirstItem().getClass());
-            System.out.println(Cars.get(key).getSecondItem().getClass());
-            
-            cars.add(new Car(key.getFirstItem(), key.getSecondItem(), Cars.get(key).getFirstItem(), Cars.get(key).getSecondItem()));
+    public void Sort(Integer n){
+
+        if(n > Cars.size()){
+            n = Cars.size();
         }
 
-        for(var id : cars){
-            System.out.println(id.toString());
-        }
+        cars = new ArrayList<Car>();
+        ArrayList<Car> listCars = new ArrayList<Car>(Cars.keySet());
+        Collections.sort(listCars, (s0, s1) -> s0.getRaInteger().compareTo(s1.getRaInteger()));
+        for(var id : listCars) { if(n == 0){ break; } cars.add(id); n--; }
+        XMLParser.setCars(cars);
+        ParserJson.setCars(cars);
+        
+    }
 
-        Integer CounterRapid = 0;
+    public void GetfirstNrapids(Integer n){
 
         for(int iter_0 = 0; iter_0 < cars.size(); iter_0++){
+
             for(int iter = 0; iter < cars.size(); iter++){
+
                 if(iter_0 == iter){
                     continue;
                 }
-                else if((cars.get(iter_0).getPosition() - cars.get(iter).getPosition()) +
-                   (double)(cars.get(iter_0).getVelocity() - cars.get(iter).getVelocity()) * time > 0){
-                    CounterRapid++;
+
+                if(cars.get(iter_0).getVelocity() - cars.get(iter).getVelocity() <= 0){
+                    continue;
                 }
+
+                Double time = Math.abs((Double.valueOf(cars.get(iter).getPosition()) - Double.valueOf(cars.get(iter_0).getPosition())) / 
+                                       (Double.valueOf(cars.get(iter).getVelocity()) - Double.valueOf(cars.get(iter_0).getVelocity()))
+                ); 
+
+                cars.get(iter_0).IncreaseRapids(time);
+                
+                Cars.put(new Car(cars.get(iter_0).getPosition(),
+                                 cars.get(iter_0).getVelocity(),
+                                 cars.get(iter_0).getBrand(),
+                                 cars.get(iter_0).getRaInteger()),
+                                 cars.get(iter).getBrand());
             }
-        }
-
-        System.out.println(CounterRapid);
-    }
-
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Hashtable<Pair<String, String>, Pair<Integer, Integer>> cHashtable = new Hashtable<>();
-        for(int i = 0; i < 4; i++){
-            String brandString = scan.nextLine();
-            String colString = scan.nextLine();
-            int Pos = scan.nextInt();
-            int Vel = scan.nextInt();
-
-            Pair<String, String> str = new Pair<String, String>(brandString, colString);
-            Pair<Integer, Integer> iPair = new Pair<Integer,Integer>(Pos, Vel);
-
-            cHashtable.put(str, iPair);
 
         }
         
-        Track Main = new Track(cHashtable);
-        Main.CountRapid(1.9d);
-        scan.close();
+        Sort(n);
+        XMLParser.setcars(Cars);
+        ParserJson.setCars(Cars);
+
+    }
+
+    public void Print() {
+
+        Enumeration<Car> nEnumeration = Cars.keys();
+
+        while (nEnumeration.hasMoreElements()) {   
+            Car key = nEnumeration.nextElement();
+            System.out.println("{ Position: " + key.getPosition() +
+                           ", Velocity: " + key.getVelocity() +
+                           ", Brand: " + key.getBrand() +
+                           ", Time: " + key.getRaInteger() + 
+                           ", Brand_2 " + Cars.get(key).toString() + 
+            " }"
+            );
+            
+        }
+
     }
 
 }
