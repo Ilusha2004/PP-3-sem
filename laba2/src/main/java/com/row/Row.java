@@ -1,4 +1,4 @@
-package com.bigdecimal.Row;
+package com.row;
 
 public class Row {
 

@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
 
+import com.bigdecimal.Row.Row;
+
 public class Main {
     public static void main(String[] args) throws Exception {
 
@@ -17,8 +19,8 @@ public class Main {
             System.out.println("Incorrect input!");
         }
 
-        // Row obj = new Row(x, k);
-        // System.out.println(BigDecimal.valueOf(obj.TaylorN10()).setScale(k, RoundingMode.HALF_DOWN));
+        Row obj = new Row(x, k);
+        System.out.println(BigDecimal.valueOf(obj.TaylorN10()).setScale(k, RoundingMode.HALF_DOWN));
 
         Big oBig = new Big(x, k);
         System.out.println(oBig.TaylorN1(x, k));
