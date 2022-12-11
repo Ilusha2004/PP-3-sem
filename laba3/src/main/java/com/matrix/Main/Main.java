@@ -1,11 +1,14 @@
 package com.matrix.Main;
 
-import java.util.Arrays;
 import com.matrix.Matrix.Matrix;
 
 public class Main {
     public static void main(String[] args) {
-        Matrix mat = new Matrix(10, 1);
+       
+        Matrix mat = new Matrix(4, 1);
+
+        mat.FindMaximalElementInMatrixAndDelete();
+        System.out.println(mat.GetMax());
 
         System.out.println("Old Matrix: ");
         mat.PrintMatrix();
@@ -14,10 +17,11 @@ public class Main {
         mat.ShowDeletingStrokeAndStolb();
         mat.ShowNewMatrix();
         System.out.println("Maximal element: " + mat.GetMax());
-        if(mat.GetLenght() - Arrays.binarySearch(mat.gIntegers(), mat.GetMax()) < mat.GetLenght()){
-            System.out.println("True " + "Index: " + (mat.GetLenght() - Arrays.binarySearch(mat.gIntegers(), mat.GetMax())));
+        if(mat.FindElem()){
+            System.out.println("True ");
         }else{
             System.out.println("False");
         }
+        mat.FindElem();
     }
 }

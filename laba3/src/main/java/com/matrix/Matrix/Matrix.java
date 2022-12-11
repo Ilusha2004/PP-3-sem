@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Formatter;
 import java.text.NumberFormat;
-
 public class Matrix {
 
     private int N;
@@ -24,17 +23,36 @@ public class Matrix {
 
         for(int i = 0; i < array2DInteger.length; i++){
             for(int k = 0; k < array2DInteger.length; k++){
-                array2DInteger[i][k] = (int)(Math.random() * Math.pow(10, krat) * -1); 
+                double value = Math.random() * Math.pow(10, krat);
+                if(i % 2 == 0 && k % 2 != 0) {
+                    value *= -1;
+                }
+                array2DInteger[i][k] = (int)value; 
             }
         }
     }
 
+    public Matrix(Integer[][] arraIntegers) {
+        this.N = arraIntegers.length;
+        this.krat = 10;
+        array2DInteger = new Integer[N][N];
+
+        for(int i = 0; i < array2DInteger.length; i++){
+            for(int k = 0; k < array2DInteger.length; k++){
+                array2DInteger[i][k] = arraIntegers[i][k];
+            }
+        }
+    }
+
+
     public void PrintMatrix(){
         for(int i = 0; i < array2DInteger.length; i++){
             form = new Formatter();
+
             for(Integer p: array2DInteger[i]){
                 form.format("% " + (krat + 1) + "d", p);
             }
+
             System.out.println(form.format(""));
             form.close();
         }
@@ -42,8 +60,10 @@ public class Matrix {
 
     public void ShowDeletingStrokeAndStolb(){
         System.out.println("Deleting: ");
+
         for(int i = 0; i < array2DInteger.length; i++){
             form = new Formatter();
+
             for(int k = 0; k < array2DInteger.length; k++){
                 if(k == MaxS || i == MaxStroke){
                     form.format("% " + (krat + 1) + "d", 0);
@@ -61,7 +81,6 @@ public class Matrix {
     public void ShowNewMatrix(){
         System.out.println("New Matrix: ");
         NumberFormat fNumberFormat = NumberFormat.getInstance();
-        NumberFormat fNumberFormat2 = NumberFormat.getCompactNumberInstance();
         NumberFormat fNumberFormat3 = NumberFormat.getCurrencyInstance();
 
         for(int i = 0; i < aIntegers2D.length; i++){
@@ -72,6 +91,7 @@ public class Matrix {
             System.out.println(form.format(""));
             form.close();
         }
+
         System.out.println();
         for(int i = 0; i < aIntegers2D.length; i++){
             for(Integer p: aIntegers2D[i]){
@@ -79,13 +99,7 @@ public class Matrix {
             }
             System.out.println();
         }
-        System.out.println();
-        for(int i = 0; i < aIntegers2D.length; i++){
-            for(Integer p: aIntegers2D[i]){
-                System.out.print(fNumberFormat2.format(p) + " ");
-            }
-            System.out.println();
-        }
+        
         System.out.println();
         for(int i = 0; i < aIntegers2D.length; i++){
             for(Integer p: aIntegers2D[i]){
@@ -98,11 +112,11 @@ public class Matrix {
     }
 
     public void FindMaximalElementInMatrixAndDelete(){
-        Integer[][] ar = new Integer[array2DInteger.length - 1][array2DInteger.length - 1];
+        Integer[][] ar = new Integer[N - 1][N - 1];
         int ik = 0, ki = 0;
 
-        for(int i = 0; i < array2DInteger.length; i++){
-            for(int k = 0; k < array2DInteger.length; k++){
+        for(int i = 0; i < N; i++){
+            for(int k = 0; k < N; k++){
                 if(Math.abs(array2DInteger[i][k]) > Math.abs(max)){
                     max = array2DInteger[i][k];
                     MaxStroke = i;
@@ -146,6 +160,10 @@ public class Matrix {
         return MaxStroke;
     }
 
+    int GetMaxS() {
+        return MaxS;
+    }
+
     public int GetLenght(){
         return aIntegers2D.length;
     }
@@ -153,6 +171,47 @@ public class Matrix {
     public Integer[] gIntegers(){
         Arrays.sort(aIntegers2D[aIntegers2D.length - 1]);
         return aIntegers2D[aIntegers2D.length - 1];
+    }
+
+    public boolean FindElem() {
+        if(Arrays.binarySearch(gIntegers(), GetMax()) >= 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public Integer[][] getArray2DInteger() {
+        return array2DInteger;
+    }
+
+    public Integer[][] getaIntegers2D() {
+        return aIntegers2D;
+    }
+
+    public Integer getMax() {
+        return max;
+    }
+
+    public int getMaxStroke() {
+        return MaxStroke;
+    }
+
+    public int getMaxS() {
+        return MaxS;
+    }
+
+    public int getKrat() {
+        return krat;
+    }
+
+    public Formatter getForm() {
+        return form;
     }
 
 }
