@@ -17,6 +17,26 @@ ab
 
 public class ConvString{
 
+    private String maxString;
+    private String str_0;
+    private String str_1; 
+    private List <String> arraylist_1;
+    private List<String> words;
+    private String P;
+    private List<String> palindromesList;
+    private List <String> sortListByAmount;
+    private List<String> FirstNumberAndSymbol;
+    private StringBuffer buffer;
+
+    public ConvString(String str_0, String str_1, String P) {
+        this.str_0 = str_0;
+        this.str_1 = str_1;
+        this.P = P;
+    }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     public Integer parseInt(String s, int radix){
         double am = 0d;
         char[] s_0 = new char[s.length()];
@@ -58,7 +78,8 @@ public class ConvString{
         while(matches.find()){
             lenght_1++;
         }
-        return s != null && !Pattern.matches("[\\d]", s) && !Pattern.matches("[\\D]", s) && lenght_0 != 0 && lenght_1 != 0;
+        return s != null && !Pattern.matches("[\\d]", s) &&
+               !Pattern.matches("[\\D]", s) && lenght_0 != 0 && lenght_1 != 0;
     }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,69 +87,51 @@ public class ConvString{
     public static boolean isNum(String s){
         try{
             Integer.parseInt(s, 2);
-
         }catch(NumberFormatException ex){
             return false;
         }
         return true;
     }
 
-    public void DoIt() {
-        
-        String maxString = new String(); 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter string of tokens: ");
-        String str_0 = scanner.nextLine();
-        System.out.print("Enter string of separators: ");
-        String str_1 = scanner.nextLine();
-        List<String> words = new ArrayList<>();
-        System.out.print("Enter amount which you want to find: ");
-        String P = scanner.nextLine();
-
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-        if(str_1.length() == 1){
+    public void FindAllInDualSystem() {
+        words = new ArrayList<>();
+        if(str_1.length() == 1) {
             String[] TempWords = new String[str_0.length()];
             TempWords = str_0.split(str_1);
             words = new ArrayList<>(Arrays.asList(TempWords));
         }
 
-        else{
+        else {
             StringTokenizer tokenizer = new StringTokenizer(str_0, str_1);
             int max = 0; int i = 0;
-            while(tokenizer.hasMoreTokens()){
+            while(tokenizer.hasMoreTokens()) {
                 words.add(tokenizer.nextToken());
-                if(words.get(i).length() > max){
-                    maxString = words.get(i);
+                if(words.get(i).length() > max) {
+                    setMaxString(words.get(i));
                     max = words.get(i).length();
                 }
                 i++;
             }
         }  //все числа в двоичной системе  
-
-        System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println("All tokens: ");
-        for(String word : words){
-            System.out.print(String.format("%s ", word));
-        }
+    }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        System.out.println("\n---------------------------------------------------------------------------------------");
-        System.out.println("All tokens that are numbers: ");
-        List <String> arraylist_1 = new ArrayList<>();
-
+    public void FindAllTokensWithNumbers() {
+        arraylist_1 = new ArrayList<>();
         for(String word : words){
             if(isNum(word) == true){
                 arraylist_1.add(word);
             }
-            System.out.print(String.format("%s ", word));
         }
+    }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        List<String> palindromesList = new ArrayList<>();
+    public void FindPalindrome() {
+        palindromesList = new ArrayList<>();
             
         for(int i = 0; i < arraylist_1.size(); i++){ // iterable "string"
             char[] str_2 = new char[arraylist_1.get(i).length()];
@@ -145,18 +148,15 @@ public class ConvString{
                 }
             }
         }  // поиск палиндрома
+    }        
 
-        System.out.println("\n---------------------------------------------------------------------------------------");
-        System.out.println("All numbers that are not palindrome: ");
-        for(String pal : palindromesList){
-            System.out.println(pal);
-        }
-        
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+    public void Final() {
         Collections.sort(arraylist_1, (s0, s1) -> Integer.valueOf(Integer.parseInt(s0, 2)).compareTo(Integer.valueOf(Integer.parseInt(s1, 2))));
-        List<String> FirstNumberAndSymbol = words;
-        StringBuffer buffer = new StringBuffer(str_0);
+        FirstNumberAndSymbol = words;
+        buffer = new StringBuffer(str_0);
 
         for(String nas : FirstNumberAndSymbol){
             if(isNumeric(nas) == true && nas.length() != 0){
@@ -166,25 +166,62 @@ public class ConvString{
             }
         }
 
-        System.out.println(String.format("The largest number: %s", arraylist_1.get(arraylist_1.size() - 1)));
-        System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println(String.format("First after deleting token consists numbers and characters: \n%s", buffer.toString()));
-
         buffer.insert(0, arraylist_1.get(arraylist_1.size() - 1));
 
-        System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println(String.format("First line after adding the largest number: \n%s", buffer.toString()));
+    }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        List <String> sortListByAmount = FirstNumberAndSymbol;
+    public void SortListByAmount() {
+        sortListByAmount = new ArrayList<>();
+        sortListByAmount = FirstNumberAndSymbol;
         Collections.sort(sortListByAmount, (s0, s1) -> Integer.valueOf(LengthOfString(s0)).compareTo(LengthOfString(s1)));
+    }
 
-        System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println("Sorting list by amount of numbers: ");
-        for(String list : sortListByAmount){
-            System.out.print(String.format("%s ", list));
-        }
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public String getMaxString() {
+        return maxString;
+    }
+
+    public void setMaxString(String maxString) {
+        this.maxString = maxString;
+    }
+
+    public String getStr_0() {
+        return str_0;
+    }
+
+    public String getStr_1() {
+        return str_1;
+    }
+
+    public List<String> getArraylist_1() {
+        return arraylist_1;
+    }
+
+    public List<String> getWords() {
+        return words;
+    }
+
+    public String getP() {
+        return P;
+    }
+
+    public List<String> getPalindromesList() {
+        return palindromesList;
+    }
+
+    public List<String> getSortListByAmount() {
+        return sortListByAmount;
+    }
+
+    public List<String> getFirstNumberAndSymbol() {
+        return FirstNumberAndSymbol;
+    }
+
+    public StringBuffer getBuffer() {
+        return buffer;
     }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
