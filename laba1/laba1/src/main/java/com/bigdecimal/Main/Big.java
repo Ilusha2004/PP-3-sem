@@ -6,9 +6,9 @@ import java.math.RoundingMode;
 
 class Big {
 
-    public BigDecimal x;
-    public BigDecimal eps;
-    public BigInteger k;
+    private BigDecimal x;
+    private BigDecimal eps;
+    private BigInteger k;
 
     Big(double x, int k){
         this.x = BigDecimal.valueOf(x);
@@ -54,6 +54,18 @@ class Big {
         }
         
         return temp_1.setScale(k, RoundingMode.HALF_DOWN);
+    }
+
+    public BigDecimal getX() {
+        return x;
+    }
+
+    public BigDecimal getEps() {
+        return eps;
+    }
+
+    public BigInteger getK() {
+        return k;
     }
 
 }

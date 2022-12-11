@@ -2,9 +2,9 @@ package com.bigdecimal.Row;
 
 public class Row {
 
-    public double x;
-    public double eps;
-    public int k;
+    private double x;
+    private double eps;
+    private int k;
 
     public Row(double x, int k){
         this.x = x; this.k = k;
@@ -36,5 +36,17 @@ public class Row {
         }
 
         return temp_1;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getEps() {
+        return eps;
+    }
+
+    public int getK() {
+        return k;
     }
 }
