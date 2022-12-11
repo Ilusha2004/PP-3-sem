@@ -5,16 +5,15 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 import com.big.Big;
-import com.form.Form;
+import com.form.Format;
 import com.row.Row;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        Form formatter = new Form(); 
+        Format formatter = new Format(); 
 
         Scanner scanner = new Scanner(System.in);
-        
 
         System.out.println("Input x, where  -1 < x < 1, and k > 0");
         double x = scanner.nextDouble();
@@ -41,6 +40,8 @@ public class Main {
         System.out.println(formatter.Zapyataya(oBig.TaylorN1(x, k)));
         System.out.println("Another OCTA formatting: " + formatter.EightDigits(oBig.TaylorN1(x, k), k));
         System.out.println("Another HEX formatting: " + formatter.SixteenDigits(oBig.TaylorN1(x, k), k));
+        System.out.println(formatter.PositiveAndNegative(new BigDecimal(12.13)));
         scanner.close();
     }
+    
 }

@@ -5,9 +5,9 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.Formatter;
 
-public class Form{
+public class Format {
 
-    Formatter form = new Formatter();
+    private Formatter form = new Formatter();
 
     public String Skobki(BigDecimal x){
         form = new Formatter();

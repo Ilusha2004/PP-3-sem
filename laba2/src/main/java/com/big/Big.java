@@ -6,9 +6,21 @@ import java.math.RoundingMode;
 
 public class Big {
 
-    public BigDecimal x;
-    public BigDecimal eps;
-    public BigInteger k;
+    private BigDecimal x;
+    private BigDecimal eps;
+    private BigInteger k;
+
+    public BigDecimal getX() {
+        return x;
+    }
+
+    public BigDecimal getEps() {
+        return eps;
+    }
+
+    public BigInteger getK() {
+        return k;
+    }
 
     public Big(double x, int k){
         
