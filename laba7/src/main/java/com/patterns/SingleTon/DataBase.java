@@ -3,7 +3,6 @@ package com.patterns.SingleTon;
 import java.util.List;
 
 public class DataBase {
-
     private static DataBase instance;
     public List<String> Data;
 

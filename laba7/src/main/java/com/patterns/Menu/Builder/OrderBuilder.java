@@ -8,7 +8,6 @@ import com.patterns.Menu.Builder.Order.Order;
 import com.patterns.Menu.Builder.Type.MenuType;
 
 public class OrderBuilder implements MenuInteface {
-
     private MenuType type;
     private Coffee coffee;
     private Dessert dessert;

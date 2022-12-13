@@ -1,6 +1,7 @@
 package com.patterns.Menu.Builder.ObjectClasses;
 
 public class Dessert {
+    
     private Integer amount;
     private String filling;
     private String mainPart;
@@ -37,7 +38,7 @@ public class Dessert {
         this.mainPart = mainPart;
     }
 
-    public String getTop() {
+    public String getTop() { 
         return top;
     }
 

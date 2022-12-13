@@ -1,6 +1,7 @@
 package com.patterns.Menu.Builder.ObjectClasses;
 
 public class Table {
+    
     private Integer numberTable;
     private Integer amountOfTable;
     
@@ -16,7 +17,7 @@ public class Table {
     public void setNumberTable(Integer numberTable) {
         this.numberTable = numberTable;
     }
-
+  
     public Integer getAmountOfTable() {
         return amountOfTable;
     }

@@ -7,7 +7,6 @@ import com.patterns.Menu.Builder.ObjectClasses.Table;
 import com.patterns.Menu.Builder.Type.MenuType;
 
 public class Custumer {
-
     private String name;
 
     public void order(OrderBuilder builder) {
