@@ -1,0 +1,53 @@
+{
+    "cars" : [
+        {
+            "Brand" : "Audi",
+            "Position" : 124.2,
+            "Velocity" : 78.2
+
+        },
+        {
+            "Brand" : "Mercedes-Benz",
+            "Position" : 67.2,
+            "Velocity" : 156.2
+
+        },
+        {
+            "Brand" : "Lada",
+            "Position" : 78.2,
+            "Velocity" : 245.2
+
+        },
+        {
+            "Brand" : "Lancia",
+            "Position" : 264.4,
+            "Velocity" : 189.2
+
+        },
+        {
+            "Brand" : "Citröen",
+            "Position" : 190.2,
+            "Velocity" : 56.2
+
+        },
+        {
+            "Brand" : "BMW",
+            "Position" : 126.2,
+            "Velocity" : 34.2
+
+        },
+        {
+            "Brand" : "Volkswagen",
+            "Position" : 122.3,
+            "Velocity" : 312.2
+
+        },
+        {
+            "Brand" : "Volkswagen",
+            "Position" : 212.3,
+            "Velocity" : 32.2
+
+        }
+
+    ]
+}

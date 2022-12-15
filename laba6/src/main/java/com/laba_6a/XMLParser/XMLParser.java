@@ -88,7 +88,7 @@ public class XMLParser {
             transform.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(document);
 
-            StreamResult result = new StreamResult(new File("resourses/out.xml"));
+            StreamResult result = new StreamResult(new File("resourses/xlout.xml"));
 
             transform.transform(source, result);
 

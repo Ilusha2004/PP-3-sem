@@ -1,12 +1,6 @@
 package com.laba_6a.Main;
 
-import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
 import com.laba_6a.JsonParser.ParserJson;
 import com.laba_6a.XMLParser.XMLParser;
 import com.laba_6a.car.Car;
@@ -22,17 +16,18 @@ public class Main {
 
         ArrayList<Car> cars = new ArrayList<>();
         System.out.println("Reading XML file...");
-        parser.Parse("resourses/car.xml");
+        parser.Parse("resourses/lscar.xml");
         cars = XMLParser.getCars();
         Track Main = new Track(cars);
         Main.GetfirstNrapids(10);
+        System.out.println(Main.getCars());
 
         System.out.println("Writting in XML file");
         parser.WriteXMLFile("resourses/xlout.xml");
         
         cars = new ArrayList<>();
         System.out.println("Reading JSON file...");
-        parserJson.Parse("resourses/car.json");
+        parserJson.Parse("resourses/lscar.json");
         cars = ParserJson.getCars();
         Track Main_0 = new Track(cars);
         Main_0.GetfirstNrapids(5);
