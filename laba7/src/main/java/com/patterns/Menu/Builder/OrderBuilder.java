@@ -4,8 +4,8 @@ import com.patterns.Menu.Builder.MenuInterface.MenuInteface;
 import com.patterns.Menu.Builder.ObjectClasses.Coffee;
 import com.patterns.Menu.Builder.ObjectClasses.Dessert;
 import com.patterns.Menu.Builder.ObjectClasses.Table;
-import com.patterns.Menu.Builder.Order.Order;
 import com.patterns.Menu.Builder.Type.MenuType;
+import com.patterns.Order.Order;
 
 public class OrderBuilder implements MenuInteface {
     private MenuType type;

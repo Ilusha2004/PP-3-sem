@@ -1,4 +1,4 @@
-package com.patterns.Menu.Builder.Order;
+package com.patterns.Order;
 
 import com.patterns.Menu.Builder.ObjectClasses.Coffee;
 import com.patterns.Menu.Builder.ObjectClasses.Dessert;
@@ -18,6 +18,17 @@ public class Order {
         this.dessert = dessert;
         this.table = table;
         this.amoutOrders = amoutOrders;
+    }
+
+    public Order(Order order) {
+        this.type = order.getType();
+        this.coffee = order.getCoffee();
+        this.dessert = order.getDessert();
+        this.table = order.getTable();
+        this.amoutOrders = order.getAmoutOrders();
+    }
+
+    public Order() {
     }
 
     public MenuType getType() {

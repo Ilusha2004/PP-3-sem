@@ -2,11 +2,13 @@ package com.patterns.SingleTon;
 
 import java.util.List;
 
+import com.patterns.Order.Order;
+
 public class DataBase {
     private static DataBase instance;
-    public List<String> Data;
+    public List<Order> Data;
 
-    private DataBase(List<String> list){
+    private DataBase(List<Order> list){
         try {
             Thread.sleep(1000);
         } catch (Exception e) {
@@ -15,7 +17,7 @@ public class DataBase {
         this.Data = list;
     }
 
-    public static DataBase getInstance(List<String> list) {
+    public static DataBase getInstance(List<Order> list) {
         if(instance == null) {
             instance = new DataBase(list);
         }

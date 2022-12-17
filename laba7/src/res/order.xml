@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orders>
+    <person Name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert amount="2" filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="govno" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+</orders>

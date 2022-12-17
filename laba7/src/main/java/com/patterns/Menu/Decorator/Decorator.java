@@ -15,4 +15,9 @@ public class Decorator implements MenuInterface {
         this.interInterface.doOption();
     }
 
+    @Override
+    public void setPosition() {
+        this.interInterface.setPosition();
+    }
+
 }

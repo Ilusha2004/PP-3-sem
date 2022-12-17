@@ -2,7 +2,7 @@ package com.patterns.ClientBase;
 
 import com.patterns.Menu.Builder.OrderBuilder;
 import com.patterns.Menu.Builder.Custumer.Custumer;
-import com.patterns.Menu.Builder.Order.Order;
+import com.patterns.Order.Order;
 
 public class Main { 
     
