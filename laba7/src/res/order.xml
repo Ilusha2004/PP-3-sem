@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <orders>
-    <person Name="Ruslan">
+    <person name="Ruslan">
         <menutype type="BREAKFAST"/>
         <table numberTable="12" amountOfTable="2"/>
-        <dessert amount="2" filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="govno" typeCoffeeBeans="kal" />
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
+        <amount am="12"/>
+    </person>
+    <person name="Ruslan">
+        <menutype type="BREAKFAST"/>
+        <table numberTable="12" amountOfTable="2"/>
+        <dessert filling="hui" mainPart="lol" top="pizda"/>
+        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
         <amount am="12"/>
     </person>
 </orders>

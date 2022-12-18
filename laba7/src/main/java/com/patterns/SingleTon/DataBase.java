@@ -3,21 +3,22 @@ package com.patterns.SingleTon;
 import java.util.List;
 
 import com.patterns.Order.Order;
+import com.patterns.Pair.Pair;
 
 public class DataBase {
     private static DataBase instance;
-    public List<Order> Data;
+    public static List<Pair<String, Order>> Data;
 
-    private DataBase(List<Order> list){
+    private DataBase(List<Pair<String, Order>> list){
         try {
             Thread.sleep(1000);
         } catch (Exception e) {
             e.getStackTrace();
         }
-        this.Data = list;
+        Data = list;
     }
 
-    public static DataBase getInstance(List<Order> list) {
+    public static DataBase getInstance(List<Pair<String, Order>> list) {
         if(instance == null) {
             instance = new DataBase(list);
         }

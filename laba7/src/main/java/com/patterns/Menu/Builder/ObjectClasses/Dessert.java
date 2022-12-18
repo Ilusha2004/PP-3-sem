@@ -1,25 +1,15 @@
 package com.patterns.Menu.Builder.ObjectClasses;
 
 public class Dessert {
-    
-    private Integer amount;
+
     private String filling;
     private String mainPart;
     private String top;
     
-    public Dessert(Integer amount, String filling, String mainPart, String top) {
-        this.amount = amount;
+    public Dessert(String filling, String mainPart, String top) {
         this.filling = filling;
         this.mainPart = mainPart;
         this.top = top;
-    }
-
-    public Integer getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Integer amount) {
-        this.amount = amount;
     }
 
     public String getFilling() {
@@ -44,5 +34,11 @@ public class Dessert {
 
     public void setTop(String top) {
         this.top = top;
+    }
+
+    @Override
+    public String toString() {
+        return "(filling=" + filling + ", mainPart=" + mainPart + ", top=" + top + ")";
     } 
+
 }

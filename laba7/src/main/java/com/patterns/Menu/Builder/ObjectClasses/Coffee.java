@@ -1,6 +1,7 @@
 package com.patterns.Menu.Builder.ObjectClasses;
 
 public class Coffee {
+
     private Double tempeture;
     private boolean is_sweet;
     private Integer strenght;
@@ -43,6 +44,12 @@ public class Coffee {
 
     public String getTypeCoffeeBeans() {
         return typeCoffeeBeans;
+    }
+
+    @Override
+    public String toString() {
+        return "(tempeture=" + tempeture + ", is_sweet=" + is_sweet + ", strenght=" + strenght
+                + ", typeCoffeeBeans=" + typeCoffeeBeans + ")";
     }
 
 } 

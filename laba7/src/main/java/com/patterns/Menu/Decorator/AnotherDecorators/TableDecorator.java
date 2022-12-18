@@ -4,24 +4,18 @@ import com.patterns.Menu.Decorator.Decorator;
 import com.patterns.Menu.Decorator.MainComponents;
 import com.patterns.Menu.Decorator.Interface.MenuInterface;
 import com.patterns.Order.Order;
+import com.patterns.SingleTon.DataBase;
 
 public class TableDecorator extends Decorator {
 
     public TableDecorator(MenuInterface interInterface) {
         super(interInterface);
     }
-
-    @Override
-    public void doOption() {
-        System.out.println("hallo");
-        super.doOption();
-    }
     
     public void setPosition() {
         Order temp = new Order(MainComponents.getOrder());
-        temp.setDessert(null);
-        MainComponents.setOrder(new Order(null));
-        System.out.println(MainComponents.getOrder().toString());
+        temp.setTable(DataBase.Data.get(DataBase.Data.size() - MainComponents.getCounter()).getSecondItem().getTable());
+        MainComponents.setOrder(new Order(temp));
         super.setPosition();
     }
     

@@ -25,6 +25,10 @@ public class Table {
     public void setAmountOfTable(Integer amountOfTable) {
         this.amountOfTable = amountOfTable;
     }
-    
+
+    @Override
+    public String toString() {
+        return "(numberTable=" + numberTable + ", amountOfTable=" + amountOfTable + ")";
+    }
     
 }

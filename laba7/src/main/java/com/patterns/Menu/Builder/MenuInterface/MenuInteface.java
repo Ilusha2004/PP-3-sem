@@ -6,9 +6,8 @@ import com.patterns.Menu.Builder.ObjectClasses.Table;
 import com.patterns.Menu.Builder.Type.MenuType;
 
 public interface MenuInteface {
-    void setType(MenuType menuType); // завтрак, обед, ужин
-    void setCoffee(Coffee coffee);   // латте, каппучино, эспрессо, американо
-    void setDessert(Dessert dessert); // пуддигн, мороженное, вафли, пирог, панкейки
+    void setType(MenuType menuType);
+    void setCoffee(Coffee coffee);
+    void setDessert(Dessert dessert);
     void setTable(Table table);
-
 }

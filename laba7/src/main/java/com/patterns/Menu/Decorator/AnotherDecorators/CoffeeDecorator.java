@@ -4,6 +4,7 @@ import com.patterns.Menu.Decorator.Decorator;
 import com.patterns.Menu.Decorator.MainComponents;
 import com.patterns.Menu.Decorator.Interface.MenuInterface;
 import com.patterns.Order.Order;
+import com.patterns.SingleTon.DataBase;
 
 public class CoffeeDecorator extends Decorator {
 
@@ -11,17 +12,10 @@ public class CoffeeDecorator extends Decorator {
         super(interInterface);
     }
 
-    @Override
-    public void doOption() {
-        System.out.println("privet");
-        super.doOption();
-    }
-
     public void setPosition() {
         Order temp = new Order(MainComponents.getOrder());
-        temp.setDessert(null);
-        MainComponents.setOrder(new Order(null));
-        System.out.println(MainComponents.getOrder().toString());
+        temp.setCoffee(DataBase.Data.get(DataBase.Data.size() - MainComponents.getCounter()).getSecondItem().getCoffee());
+        MainComponents.setOrder(new Order(temp));
         super.setPosition();
     }
     
