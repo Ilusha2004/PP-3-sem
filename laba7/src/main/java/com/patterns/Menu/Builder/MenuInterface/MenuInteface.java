@@ -10,4 +10,5 @@ public interface MenuInteface {
     void setCoffee(Coffee coffee);
     void setDessert(Dessert dessert);
     void setTable(Table table);
+    void setAmoutOrders(Integer amount);
 }

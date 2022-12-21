@@ -34,7 +34,13 @@ public class OrderBuilder implements MenuInteface {
         this.table = table;
     }
 
+    @Override
+    public void setAmoutOrders(Integer amount) {
+        this.amountOrders = amount;
+    }   
+
     public Order getOrder() {
         return new Order(type, coffee, dessert, table, amountOrders);
-    }    
+    }
+
 }

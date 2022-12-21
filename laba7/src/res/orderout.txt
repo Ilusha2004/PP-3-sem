@@ -1,0 +1,10 @@
+Ruslan
+Order [type=BREAKFAST, coffee=(tempeture=40.2, is_sweet=true, strenght=2, typeCoffeeBeans=arabica), dessert=(filling=chocolate, mainPart=waffles, top=coconut), table=(numberTable=4, amountOfTable=2), amoutOrders=1]
+Vlad
+Order [type=LUNCH, coffee=(tempeture=75.3, is_sweet=false, strenght=1, typeCoffeeBeans=liberica), dessert=(filling=strawberry, mainPart=pancake, top=honey), table=(numberTable=5, amountOfTable=1), amoutOrders=2]
+Zahar
+Order [type=BREAKFAST, coffee=(tempeture=56.3, is_sweet=true, strenght=2, typeCoffeeBeans=robust), dessert=(filling=lollypop, mainPart=crackets, top=syrop), table=(numberTable=4, amountOfTable=4), amoutOrders=4]
+Pavel
+Order [type=DINNER, coffee=(tempeture=63.4, is_sweet=true, strenght=10, typeCoffeeBeans=liberica), dessert=(filling=cocoa, mainPart=waffles, top=jelly), table=(numberTable=6, amountOfTable=1), amoutOrders=1]
+Alexsandra
+Order [type=LUNCH, coffee=(tempeture=90.8, is_sweet=false, strenght=4, typeCoffeeBeans=arabica), dessert=(filling=honey, mainPart=pancakes, top=candy), table=(numberTable=8, amountOfTable=3), amoutOrders=3]

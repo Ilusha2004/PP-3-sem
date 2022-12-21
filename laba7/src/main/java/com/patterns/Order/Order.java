@@ -29,6 +29,11 @@ public class Order {
     }
 
     public Order() {
+        this.type = null;
+        this.coffee = null;
+        this.dessert = null;
+        this.table = null;
+        this.amoutOrders = null;
     }
 
     public MenuType getType() {

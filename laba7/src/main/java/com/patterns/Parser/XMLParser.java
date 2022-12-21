@@ -20,9 +20,10 @@ import com.patterns.SingleTon.DataBase;
 
 public class XMLParser {
 
-    private static List<Pair<String, Order>> orders = new ArrayList<Pair<String, Order>>();
+    private static List<Pair<String, Order>> orders;
 
     public void Parse(String filePath) throws ParserConfigurationException, SAXException, IOException{
+        orders = new ArrayList<Pair<String, Order>>();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         HEXParse par = new HEXParse();
@@ -40,19 +41,23 @@ public class XMLParser {
 
             if(qName.equals("person")){
                 name = attributes.getValue("name");
+
+                counter++;
             }
 
             if(qName.equals("menutype")){
                 String type = attributes.getValue("type");
-                if(type == MenuType.BREAKFAST.toString()){
-                temp.setType(MenuType.BREAKFAST);
+                if(type.equals(MenuType.BREAKFAST.toString())){
+                    temp.setType(MenuType.BREAKFAST);
                 }
-                else if(type == MenuType.LUNCH.toString()){
+                else if(type.equals(MenuType.LUNCH.toString())){
                     temp.setType(MenuType.LUNCH);
                 }
-                else if(type == MenuType.DINNER.toString()){
+                else if(type.equals(MenuType.DINNER.toString())){
                     temp.setType(MenuType.DINNER);
                 }
+
+                counter++;
             }
 
             if(qName.equals("table")){
@@ -60,6 +65,8 @@ public class XMLParser {
                 String amountOfTable = attributes.getValue("amountOfTable");
                 temp.setTable(new Table(Integer.valueOf(numberTable),
                               Integer.valueOf(amountOfTable)));
+
+                counter++;
             }
 
             if(qName.equals("dessert")){
@@ -69,11 +76,8 @@ public class XMLParser {
                 temp.setDessert(new Dessert(filling,
                                 mainPart,
                                 top));
-            }
 
-            if(qName.equals("amount")){
-                String am = attributes.getValue("am");
-                temp.setAmoutOrders(Integer.valueOf(am));
+                counter++;
             }
 
             if(qName.equals("coffee")){
@@ -85,13 +89,24 @@ public class XMLParser {
                                Boolean.valueOf(is_sweet),
                                Integer.valueOf(strenght),
                                typeCoffeeBeans));
+
+                counter++;
             }
 
-            counter++;
-            if(counter == 6){
-                orders.add(new Pair<String,Order>(name, temp));
-                counter = 0;
+
+            if(qName.equals("amount")){
+                String am = attributes.getValue("am");
+                temp.setAmoutOrders(Integer.valueOf(am));
+
+                counter++;
             }
+
+            if(counter == 6){
+                orders.add(new Pair<String,Order>(name, new Order(temp)));
+                
+                counter = 0;  
+            }
+
         }
 
         @Override

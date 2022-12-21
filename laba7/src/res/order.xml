@@ -2,65 +2,37 @@
 <orders>
     <person name="Ruslan">
         <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
+        <table numberTable="4" amountOfTable="2"/>
+        <dessert filling="chocolate" mainPart="waffles" top="coconut"/>
+        <coffee tempeture="40.2" is_sweet="true" strenght="2" typeCoffeeBeans="arabica" />
+        <amount am="1"/>
     </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
+    <person name="Vlad">
+        <menutype type="LUNCH"/>
+        <table numberTable="5" amountOfTable="1"/>
+        <dessert filling="strawberry" mainPart="pancake" top="honey"/>
+        <coffee tempeture="75.3" is_sweet="false" strenght="1" typeCoffeeBeans="liberica" />
+        <amount am="2"/>
     </person>
-    <person name="Ruslan">
+    <person name="Zahar">
         <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
+        <table numberTable="4" amountOfTable="4"/>
+        <dessert filling="lollypop" mainPart="crackets" top="syrop"/>
+        <coffee tempeture="56.3" is_sweet="true" strenght="2" typeCoffeeBeans="robust" />
+        <amount am="4"/>
     </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
+    <person name="Pavel">
+        <menutype type="DINNER"/>
+        <table numberTable="6" amountOfTable="1"/>
+        <dessert filling="cocoa" mainPart="waffles" top="jelly"/>
+        <coffee tempeture="63.4" is_sweet="true" strenght="10" typeCoffeeBeans="liberica" />
+        <amount am="1"/>
     </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
-    </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
-    </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
-    </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
-    </person>
-    <person name="Ruslan">
-        <menutype type="BREAKFAST"/>
-        <table numberTable="12" amountOfTable="2"/>
-        <dessert filling="hui" mainPart="lol" top="pizda"/>
-        <coffee tempeture="12" is_sweet="true" strenght="2" typeCoffeeBeans="kal" />
-        <amount am="12"/>
+    <person name="Alexsandra">
+        <menutype type="LUNCH"/>
+        <table numberTable="8" amountOfTable="3"/>
+        <dessert filling="honey" mainPart="pancakes" top="candy"/>
+        <coffee tempeture="90.8" is_sweet="false" strenght="4" typeCoffeeBeans="arabica" />
+        <amount am="3"/>
     </person>
 </orders>

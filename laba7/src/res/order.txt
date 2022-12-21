@@ -1,0 +1,30 @@
+Ruslan
+BREAKFAST
+4 2
+chocolate waffles coconut
+40.2 true 2 arabica
+1
+Vlad
+LUNCH
+5 1
+strawberry pancake honey
+75.3 false 1 liberica
+2
+Zahar
+BREAKFAST
+4 4
+lollypop crackets syrop
+56.3 true 2 robust
+4
+Pavel
+DINNER
+6 1
+cocoa waffles jelly
+63.4 true 10 liberica
+1
+Alexsandra
+LUNCH
+8 3
+honey pancakes candy
+90.8 false 4 arabica
+3
