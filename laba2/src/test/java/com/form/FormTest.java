@@ -75,4 +75,5 @@ public class FormTest {
     void testZapyataya() {
         assertEquals(formatForm.Zapyataya(bigDecimal), "Point formatting: 12,47");
     }
+    
 }

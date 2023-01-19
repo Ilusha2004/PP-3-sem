@@ -24,7 +24,7 @@ public class UnCrypt {
         cipher_encrypted.init(Cipher.ENCRYPT_MODE, key);
         byte[] cipherText = cipher_encrypted.doFinal(new FileInputStream("resourses/" + path).readAllBytes());
         FileOutputStream fileOutputStream = new FileOutputStream("resourses/archiveAndEncr/encrypted_" + path);
-        setEncryptedPath("resourses/archiveAndEncr/encrypted_" + path);
+        // setEncryptedPath("resourses/archiveAndEncr/encrypted_" + path);
         fileOutputStream.write(cipherText);
         fileOutputStream.close();
     }

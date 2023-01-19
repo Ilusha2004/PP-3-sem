@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.pattern</groupId>
-  <artifactId>laba7</artifactId>
+  <groupId>com.kolok</groupId>
+  <artifactId>kolok</artifactId>
   <version>1.0.1</version>
 
-  <name>laba7</name>
+  <name>kolok</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -43,9 +43,9 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
-          <configuration>
-            <release>11</release>
-        </configuration>
+           <configuration>
+              <release>11</release>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

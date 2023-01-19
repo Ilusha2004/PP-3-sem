@@ -62,7 +62,7 @@ public class ConvStringTest {
     void testFindNotPalindrome() {
         convString.FindAllInDualSystem();
         convString.FindAllTokensWithNumbers();
-        convString.FindNotPalindrome();
+        convString.FindPalindrome();
         assertEquals(convString.getPalindromesList().get(1), "10001000100");
     }
 
@@ -70,7 +70,7 @@ public class ConvStringTest {
     void testSortListByAmount() {
         convString.FindAllInDualSystem();
         convString.FindAllTokensWithNumbers();
-        convString.FindNotPalindrome();
+        convString.FindPalindrome();
         convString.Final();
         convString.SortListByAmount();
         assertEquals(convString.getSortListByAmount().toString(), "[102, 1001, 3452, 10001000100, 10000000000000001, 10000000000001000]");

@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.string</groupId>
-  <artifactId>laba4</artifactId>
+  <groupId>com.control</groupId>
+  <artifactId>var</artifactId>
   <version>1.0.1</version>
 
-  <name>laba4</name>
+  <name>var</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -19,29 +19,12 @@
   </properties>
 
   <dependencies>
-    <!-- For UNIT testing -->
-
     <dependency>
-      <groupId>org.openjax.xml</groupId>
-      <artifactId>sax</artifactId>
-      <version>0.9.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.4.2</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.4.2</version>
-        <scope>test</scope>
-    </dependency>
-
-     <!-- For UNIT testing -->
   </dependencies>
 
   <build>
@@ -60,6 +43,9 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+              <release>17</release>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

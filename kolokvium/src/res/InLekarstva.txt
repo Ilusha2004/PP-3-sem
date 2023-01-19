@@ -1,0 +1,7 @@
+6
+"Parazin" 2025 <Byer> 23 12.6
+"Umezin" 2025 <Belllek> 22 30.0
+"Parn" 2024 <Byer> 13 15.0
+"Umen" 2022 <Belk> 14 31.0
+"Parazin" 2023 <Byer> 13 12.0
+"Umezin" 2022 <Belllek> 52 3.0

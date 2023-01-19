@@ -1,0 +1,7 @@
+Student [FirstName=Victor, SecondName=Bavanov, LastName=Pomanovich, srAmount=9.8, ID=E34534657]
+Student [FirstName=Nikolay, SecondName=Sherstyanov, LastName=Hlebovich, srAmount=8.6, ID=E67451276]
+Student [FirstName=Petr, SecondName=Ivanov, LastName=Alexandrovich, srAmount=8.1, ID=E78345673]
+Student [FirstName=Andrey, SecondName=Govorov, LastName=Genadievich, srAmount=6.4, ID=E57231230]
+Student [FirstName=Andrey, SecondName=Dubov, LastName=Petrovich, srAmount=7.3, ID=E47635233]
+Student [FirstName=Vadim, SecondName=Ivanov, LastName=Alexsandrovich, srAmount=5.2, ID=E45623451]
+Student [FirstName=Leonid, SecondName=Bavanov, LastName=Alexsandrovich, srAmount=4.8, ID=E93632357]

@@ -1,0 +1,10 @@
+Bavanov
+Student [FirstName=Leonid, SecondName=null, LastName=Alexsandrovich, srAmount=4.8, ID=E93632357]
+Dubov
+Student [FirstName=Andrey, SecondName=null, LastName=Petrovich, srAmount=7.3, ID=E47635233]
+Sherstyanov
+Student [FirstName=Nikolay, SecondName=null, LastName=Hlebovich, srAmount=8.6, ID=E67451276]
+Ivanov
+Student [FirstName=Petr, SecondName=null, LastName=Alexandrovich, srAmount=8.1, ID=E78345673]
+Govorov
+Student [FirstName=Andrey, SecondName=null, LastName=Genadievich, srAmount=6.4, ID=E57231230]

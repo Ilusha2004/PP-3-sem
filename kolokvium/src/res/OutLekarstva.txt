@@ -1,0 +1,6 @@
+Lekarstvo [Name="Parazin", Year=2025, NameManufactor=<Byer>, AmountBoxes=23, PriceForOne=0.0]
+Lekarstvo [Name="Umezin", Year=2025, NameManufactor=<Belllek>, AmountBoxes=22, PriceForOne=0.0]
+Lekarstvo [Name="Parn", Year=2024, NameManufactor=<Byer>, AmountBoxes=13, PriceForOne=0.0]
+Lekarstvo [Name="Parazin", Year=2023, NameManufactor=<Byer>, AmountBoxes=13, PriceForOne=0.0]
+Lekarstvo [Name="Umezin", Year=2022, NameManufactor=<Belllek>, AmountBoxes=52, PriceForOne=0.0]
+Lekarstvo [Name="Umen", Year=2022, NameManufactor=<Belk>, AmountBoxes=14, PriceForOne=0.0]

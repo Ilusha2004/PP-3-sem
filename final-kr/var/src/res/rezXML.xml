@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Students>
+    <Student FirstName="Victor">
+        <SecondName>Bavanov</SecondName>
+        <LastName>Pomanovich</LastName>
+        <srAmount>9.8</srAmount>
+        <ID>E34534657</ID>
+    </Student>
+    <Student FirstName="Nikolay">
+        <SecondName>Sherstyanov</SecondName>
+        <LastName>Hlebovich</LastName>
+        <srAmount>8.6</srAmount>
+        <ID>E67451276</ID>
+    </Student>
+    <Student FirstName="Petr">
+        <SecondName>Ivanov</SecondName>
+        <LastName>Alexandrovich</LastName>
+        <srAmount>8.1</srAmount>
+        <ID>E78345673</ID>
+    </Student>
+    <Student FirstName="Andrey">
+        <SecondName>Govorov</SecondName>
+        <LastName>Genadievich</LastName>
+        <srAmount>6.4</srAmount>
+        <ID>E57231230</ID>
+    </Student>
+    <Student FirstName="Andrey">
+        <SecondName>Dubov</SecondName>
+        <LastName>Petrovich</LastName>
+        <srAmount>7.3</srAmount>
+        <ID>E47635233</ID>
+    </Student>
+    <Student FirstName="Vadim">
+        <SecondName>Ivanov</SecondName>
+        <LastName>Alexsandrovich</LastName>
+        <srAmount>5.2</srAmount>
+        <ID>E45623451</ID>
+    </Student>
+    <Student FirstName="Leonid">
+        <SecondName>Bavanov</SecondName>
+        <LastName>Alexsandrovich</LastName>
+        <srAmount>4.8</srAmount>
+        <ID>E93632357</ID>
+    </Student>
+</Students>

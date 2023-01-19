@@ -1,0 +1,4 @@
+Student [FirstName=Vadim, SecondName=Ivanov, LastName=Alexsandrovich, srAmount=5.2, ID=E45623451]
+Student [FirstName=Victor, SecondName=Bavanov, LastName=Pomanovich, srAmount=9.8, ID=E34534657]
+Student [FirstName=Leonid, SecondName=Bavanov, LastName=Alexsandrovich, srAmount=4.8, ID=E93632357]
+Student [FirstName=Petr, SecondName=Ivanov, LastName=Alexandrovich, srAmount=8.1, ID=E78345673]
