@@ -26,7 +26,7 @@ public class Lekarstvo {
     public int getYear() {
         return Year;
     }
-    
+
     public void setYear(int year) {
         Year = year;
     }
@@ -50,7 +50,7 @@ public class Lekarstvo {
     public Double getPriceForOne() {
         return PriceForOne;
     }
-    
+
     public void setPriceForOne(Double priceForOne) {
         PriceForOne = priceForOne;
     }
@@ -61,5 +61,4 @@ public class Lekarstvo {
                 + AmountBoxes + ", PriceForOne=" + PriceForOne + "]";
     }
 
-    
 }
